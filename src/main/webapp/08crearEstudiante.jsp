@@ -5,26 +5,17 @@
 --%>
 <%@page import="logica.LogicaEstudiante"%>
 <%@page import="logica.Estudiante"%>
-<%@page import="persistencia.EstudianteDAO"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.TreeMap"%>
-<%@page import="java.io.File"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        
-        
-        <meta name="description" content="">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="author" content="Juan Fernando Osorno G">
         <meta name="generator" content="Hugo 0.87.0">
         <link rel="icon"= href="logoPlayClass.ico">
         <title>Crear Estudiante</title>
-
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
-
-
         <!-- Bootstrap core CSS -->
         <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -237,14 +228,14 @@
                         id = 0;
                     }
                 %>
-                <form method="post" action="juguetes_ctrl.jsp">
+                <form method="post" action="estudiantes_ctrl.jsp">
                     <div class="row mb-3">
                         <label for="txtId" class="col-form-label col-sm-2">Id</label>
-                        <input type="text" class="col-form-control col-sm-10" id="txtId" name="txtId" value="<%= id %>">
+                        <input type="text" class="col-form-control col-sm-10" id="txtId" name="txtId" value="<%= id %>" readonly>
                     </div>
                     <div class="row mb-3">
                         <label for="txtNombre" class="col-form-label col-sm-2">Nombre</label>
-                        <input type="text" class="col-form-control col-sm-10" id="txtNombre" name="txtNombre" value="<%= nombre %>">
+                        <input type="text" class="col-form-control col-sm-10" id="txtNombre" name="txtNombre" value="<%= nombre %>" required>
                     </div>
                     <div class="row mb-3">
                         <label for="txtNombre" class="col-form-label col-sm-2">Apellido</label>
@@ -255,11 +246,11 @@
                         <input type="text" class="col-form-control col-sm-10" id="txtEmail" name="txtEmail" value="<%= email %>">
                     </div>
                     <div class="row mb-3">
-                        <label for="txtNombre" class="col-form-label col-sm-2">TelÃ©fono</label>
+                        <label for="txtNombre" class="col-form-label col-sm-2">Teléfono</label>
                         <input type="text" class="col-form-control col-sm-10" id="txtTelefono" name="txtTelefono" value="<%= telefono %>">
                     </div>
                     <div class="row mb-3">
-                        <label for="selTipo" class="col-form-label col-sm-2">Nombre del Curso</label>
+                        <label for="selCurso" class="col-form-label col-sm-2">Nombre del Curso</label>
                         <%
                             LogicaEstudiante logicaEstudiantes = new LogicaEstudiante();
                             TreeMap<Integer, String> cursos = logicaEstudiantes.getCursos();

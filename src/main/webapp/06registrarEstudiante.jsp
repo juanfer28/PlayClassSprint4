@@ -220,7 +220,7 @@
                         <button type="submit" class="btn btn-light col-sm-1"><i class="bi bi-search"></i></button>                    
                     </div>
                 </form>
-                <a href="07crearEstudiante.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo Estudiante</button></a>
+                <a href="08crearEstudiante.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo Estudiante</button></a>
             </div>
             <form>
                 <table class="table">
@@ -259,7 +259,7 @@
                         <td><%= logicaEstudiante.getCursos(e.getIdcurso()) %></td>
                         <td><%= e.getFechaInicio() %></td>
                         <td>
-                            <a href="07crearEstudiante.jsp?accion=editar&id=<%= e.getId()%>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+                            <a href="08crearEstudiante.jsp?accion=editar&id=<%= e.getId()%>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
                         </td>
                     </tr>
                     <% } %>
