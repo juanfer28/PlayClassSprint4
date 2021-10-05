@@ -181,7 +181,7 @@ public class EstudianteDAO {
     }
     
     /**
-     * Cargar los diferentes tipos de juguetes desde la BD
+     * Cargar los diferentes cursos desde la BD
      * @return un treemap con la lista de los tipos de juguetes
      */
     public TreeMap<Integer, String> cargarCursoEstudiante() {
@@ -200,5 +200,17 @@ public class EstudianteDAO {
         }
         con.Desconectar();
         return listaCursos;
+    }
+    
+    /**
+     * Borrar un estudiante seleccionado por filtro
+     * @param id el identificador del estudiante que se desee borrar
+     */
+    
+    public void borrarEstudiante(int id){
+        ConexionBD con = new ConexionBD();        
+        String sql = "SELECT e.IDEstudiante DELETE"; // Falta el resto de la sentencia sql CORREGIR
+        ResultSet rs = con.EjecutarInsert(sql); // Puede ser un update
+        con.Desconectar();
     }
 }
