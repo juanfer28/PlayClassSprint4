@@ -5,10 +5,7 @@
  */
 package logica;
 
-/**
- *
- * @author Juanfer
- */
+
 public class Estudiante {
     private int id = 0;
     private String nombre;
