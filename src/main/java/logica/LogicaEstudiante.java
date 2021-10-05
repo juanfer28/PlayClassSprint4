@@ -94,7 +94,7 @@ public class LogicaEstudiante {
     public boolean guardarEstudiante(Estudiante e) {
         EstudianteDAO dao = new EstudianteDAO();
         if (e.getId() == 0) {
-            int id = dao.guardarEstudianteExistente(e);
+            int id = dao.guardarNuevoEstudiante(e);
             if (id > 0) {
                 return true;
             } else {

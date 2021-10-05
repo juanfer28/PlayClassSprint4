@@ -13,7 +13,7 @@
     </head>
     <body>
         <%
-//            int id = Integer.parseInt(request.getParameter("txtId"));
+            int id = Integer.parseInt(request.getParameter("txtId"));
             String nombre = request.getParameter("txtNombre");
             String apellido = request.getParameter("txtApellido");
             String email = request.getParameter("txtEmail");
@@ -26,7 +26,7 @@
                 e = new Estudiante(nombre, apellido, email, telefono, fecha, curso);
             }
             else if (accion.equals("editar")){
-                e = new Estudiante( nombre, apellido, email, telefono, fecha, curso);
+                e = new Estudiante( id, nombre, apellido, email, telefono, fecha, curso);
             }
             LogicaEstudiante logicaEstudiante = new LogicaEstudiante();
             boolean guardado = logicaEstudiante.guardarEstudiante(e);
@@ -36,7 +36,7 @@
                 out.println("Información de juguete no se guardó.");
             }
         %>
-        <a href="06registrarEstudiante"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver a la lista</button></a>
+        <a href="06registrarEstudiante.jsp"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver a la lista</button></a>
     </body>
 </html>
 

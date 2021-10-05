@@ -228,7 +228,7 @@
                         id = 0;
                     }
                 %>
-                <form method="post" action="estudiantes_ctrl.jsp">
+                <form method="post" action="estudiantes_ctrol.jsp">
                     <div class="row mb-3">
                         <label for="txtId" class="col-form-label col-sm-2">Id</label>
                         <input type="text" class="col-form-control col-sm-10" id="txtId" name="txtId" value="<%= id %>" readonly>
@@ -264,7 +264,7 @@
                     </div>
                     <div class="row mb-3">
                         <label for="dtpFechainicio" class="col-form-label col-sm-2">Fecha de Inicio</label>
-                        <input type="date" class="col-form-control col-sm-10" id="dtpFechaCompra" name="dtpFechaCompra" value="<%= fecha %>">
+                        <input type="date" class="col-form-control col-sm-10" id="dtpFechainicio" name="dtpFechainicio" value="<%= fecha %>">
                     </div>
                     <div class="row mb-3">
 

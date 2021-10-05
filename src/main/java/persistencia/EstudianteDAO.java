@@ -142,6 +142,7 @@ public class EstudianteDAO {
 
         String sql = "INSERT INTO estudiantes (Nombre_Estudiante, Apellido_Estudiante, Email_Estudiante, Teléfono, Fecha_de_Inicio, IDCurso) "
                 + "VALUES ('" + nombre + "', '" + apellido + "', '" + email + "', " + telefono + ", '" + fecha + "', " + idcurso + " ) ";
+        System.out.println(sql);
         ResultSet rs = con.EjecutarInsert(sql);
         int id = 0;
         try {
