@@ -38,11 +38,11 @@
     <div class="checkbox mb-3">
       <label>
         Crea tu Cuenta
-        <a href="Inscribirse.html" class="link-primary">Aqui</a>
+        <a href="02inscribirse.jsp" class="link-primary">Aqui</a>
       </label>
     </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button> 
-      <a href="xxxxxxx">
+    <a href="06registrarEstudiante.jsp"><button class="w-100 btn btn-lg btn-primary" type="button">Iniciar sesión</button></a>
+      
     <button type="button" class="mt-3 mb-1 w-70 btn btn-outline-secondary">Recuperar Contraseña</button>
       </a>
     <p class="mt-2 mb-3 text-muted">2021</p>

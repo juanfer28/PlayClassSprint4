@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-05T07:11:41 COT" name="tests.TestGeneral" finished-at="2021-10-05T07:11:42 COT" duration-ms="878">
+  <suite started-at="2021-10-07T00:21:50 COT" name="tests.TestGeneral" finished-at="2021-10-07T00:21:51 COT" duration-ms="664">
     <groups>
     </groups>
-    <test started-at="2021-10-05T07:11:41 COT" name="Command line test" finished-at="2021-10-05T07:11:42 COT" duration-ms="878">
+    <test started-at="2021-10-07T00:21:50 COT" name="Command line test" finished-at="2021-10-07T00:21:51 COT" duration-ms="664">
       <class name="tests.TestGeneral">
-        <test-method signature="verificarCargaCursosEstudiantes()[pri:0, instance:tests.TestGeneral@7714e963]" started-at="2021-10-05T07:11:41 COT" name="verificarCargaCursosEstudiantes" finished-at="2021-10-05T07:11:42 COT" duration-ms="628" status="PASS">
+        <test-method signature="verificarCargaCursosEstudiantes()[pri:0, instance:tests.TestGeneral@7714e963]" started-at="2021-10-07T00:21:50 COT" name="verificarCargaCursosEstudiantes" finished-at="2021-10-07T00:21:51 COT" duration-ms="469" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarCargaCursosEstudiantes -->
-        <test-method signature="verificarCargaEstudiantes()[pri:0, instance:tests.TestGeneral@7714e963]" started-at="2021-10-05T07:11:42 COT" name="verificarCargaEstudiantes" finished-at="2021-10-05T07:11:42 COT" duration-ms="56" status="PASS">
+        <test-method signature="verificarCargaEstudiantes()[pri:0, instance:tests.TestGeneral@7714e963]" started-at="2021-10-07T00:21:51 COT" name="verificarCargaEstudiantes" finished-at="2021-10-07T00:21:51 COT" duration-ms="44" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarCargaEstudiantes -->
-        <test-method signature="verificarConexion()[pri:0, instance:tests.TestGeneral@7714e963]" started-at="2021-10-05T07:11:42 COT" name="verificarConexion" finished-at="2021-10-05T07:11:42 COT" duration-ms="43" status="PASS">
+        <test-method signature="verificarConexion()[pri:0, instance:tests.TestGeneral@7714e963]" started-at="2021-10-07T00:21:51 COT" name="verificarConexion" finished-at="2021-10-07T00:21:51 COT" duration-ms="36" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarConexion -->
-        <test-method signature="verificarInsercionEstudiante()[pri:0, instance:tests.TestGeneral@7714e963]" started-at="2021-10-05T07:11:42 COT" name="verificarInsercionEstudiante" finished-at="2021-10-05T07:11:42 COT" duration-ms="107" status="PASS">
+        <test-method signature="verificarInsercionEstudiante()[pri:0, instance:tests.TestGeneral@7714e963]" started-at="2021-10-07T00:21:51 COT" name="verificarInsercionEstudiante" finished-at="2021-10-07T00:21:51 COT" duration-ms="80" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarInsercionEstudiante -->
