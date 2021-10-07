@@ -167,8 +167,8 @@
             <hr>
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:3bff7c84-1725-4bc1-8c1a-e4c238a90dfc/8c08285e-2c3f-495d-8dd1-64fb174a260c/128" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong>Calos Hernandez</strong>
+                    <img src="https://lms.uis.edu.co/mintic/pluginfile.php/4061/user/icon/essential/f1?rev=111440" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>Juan Fernando</strong>
                 </a>
                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                     <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -191,8 +191,9 @@
                     <a class="py-2" href="#" aria-label="Product">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
                     </a>
+                    <a class="py-2 d-none d-md-inline-block" href="06registrarEstudiante.jsp">Registro Estudiantes</a>
                     <label class="py-2 d-none d-md-inline-block text-primary" >Crear Estudiante</label>
-                    <a class="py-2 d-none d-md-inline-block" href="#">Borrar Estudiante</a>
+                    <a class="py-2 d-none d-md-inline-block" href="10borrarEstudiante.jsp">Borrar Estudiante</a>
                     <a class="py-2 d-none d-md-inline-block" href="#">Modificar Estudiante</a>
                     <a class="py-2 d-none d-md-inline-block" href="#"></a>
                     <a class="py-2 d-none d-md-inline-block" href="#"></a>
@@ -271,7 +272,7 @@
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="<%= accion %>">Guardar</button>
-                        <button type="submit" class="btn btn-secondary" id="btnSubmit" name="btnSubmit" value="cancelar">Cancelar</button>
+                        <a href="06registrarEstudiante.jsp"><button type="button" class="btn btn-secondary" id="btnSubmit2" name="btnSubmit2" value="cancelar">Cancelar</button></a>
                     </div>
                 </form>
             </div>

@@ -96,15 +96,16 @@ public class EstudianteDAO {
         ConexionBD con = new ConexionBD();
         String sql = "SELECT e.IDEstudiante, e.Nombre_Estudiante, e.Apellido_Estudiante, e.Email_Estudiante, e.Teléfono, e.Fecha_de_Inicio, e.IDCurso "
                 + "FROM estudiantes e "
-                + "JOIN matriculas m ON (e.IDEstudiante = m.IDEstudiante) "
                 + "JOIN cursos c ON (e.IDCurso = c.IDCurso) "
                 + "WHERE e.Nombre_Estudiante LIKE '%" + filtro + "%' "
                 + "OR e.Apellido_Estudiante LIKE '%" + filtro + "%' "
                 + "OR e.Email_Estudiante LIKE '%" + filtro + "%' "
                 + "OR e.Teléfono LIKE '%" + filtro + "%' "
                 + "OR e.Fecha_de_Inicio LIKE '%" + filtro + "%' "
+                + "OR c.Nombre_Curso LIKE '%" + filtro + "%' "
                 + "OR e.IDCurso LIKE '%" + filtro + "%' ";
         ResultSet rs = con.EjecutarQuery(sql);
+        System.out.println(sql);
         try {
             while (rs.next()) {
                 int id = rs.getInt("IDEstudiante");
@@ -202,15 +203,28 @@ public class EstudianteDAO {
         return listaCursos;
     }
     
+    
+    public int borrarEstudiante(Estudiante e) {
+        ConexionBD con = new ConexionBD();
+        int id = e.getId();
+        String sql = "DELETE FROM estudiantes WHERE (`IDEstudiante` = " + id + ");"; 
+        System.out.println(sql);
+        ResultSet rs = con.EjecutarInsert(sql);
+        con.Desconectar();
+        System.out.println("se ejecuto borrar");
+        return 0;
+    }
+}
+    
     /**
      * Borrar un estudiante seleccionado por filtro
      * @param id el identificador del estudiante que se desee borrar
      */
     
-    public void borrarEstudiante(int id){
-        ConexionBD con = new ConexionBD();        
-        String sql = "SELECT e.IDEstudiante DELETE"; // Falta el resto de la sentencia sql CORREGIR
-        ResultSet rs = con.EjecutarInsert(sql); // Puede ser un update
-        con.Desconectar();
-    }
-}
+//    public void borrarEstudiante(int id){
+//        ConexionBD con = new ConexionBD();        
+//        String sql = "SELECT e.IDEstudiante DELETE"; // Falta el resto de la sentencia sql CORREGIR
+//        ResultSet rs = con.EjecutarInsert(sql); // Puede ser un update
+//        con.Desconectar();
+//    }
+

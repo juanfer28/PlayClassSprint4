@@ -1,11 +1,12 @@
-<%-- 
+<!--<%-- 
    Document   : 06registrarEstudiante
    Created on : 30/09/2021, 7:25:44 p. m.
    Author     : SIRIUS
 --%>
 <%@page import="logica.LogicaEstudiante"%>
 <%@page import="logica.Estudiante"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="persistencia.EstudianteDAO"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +16,7 @@
         <meta name="author" content="Juan Fernando Osorno G">
         <meta name="generator" content="Hugo 0.87.0">
         <link rel="icon"= href="logoPlayClass.ico">
-        <title>Registro Estudiante</title>
+        <title>Control Estudiante</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
@@ -169,7 +170,7 @@
                     </a>
                 </li>
             </ul>
-            <%String nombreCompleto = request.getParameter("nombreCompletotxt");%>
+            <!--<%String nombreCompleto = request.getParameter("nombreCompletotxt");%>-->
             <hr>
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -196,9 +197,9 @@
                     <hr>
                     <a class="py-2" href="#" aria-label="Product">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-                    </a>
-                    <label class="py-2 d-none d-md-inline-block text-primary" >Registro Estudiantes</label>
-                    <a class="py-2 d-none d-md-inline-block" href="08crearEstudiante.jsp?accion=nuevo">Crear Estudiante</a>
+                    </a>                   
+                    <a class="py-2 d-none d-md-inline-block" href="08crearEstudiante.jsp?accion=nuevo">Registro Estudiantes</a>
+                    <label class="py-2 d-none d-md-inline-block text-primary" >Crear Estudiante</label>
                     <a class="py-2 d-none d-md-inline-block" href="10borrarEstudiante.jsp">Borrar Estudiante</a>
                     <a class="py-2 d-none d-md-inline-block" href="#">Modificar Estudiante</a>
                     <a class="py-2 d-none d-md-inline-block" href="#"></a>
@@ -207,69 +208,27 @@
                     <a class="py-2 d-none d-md-inline-block" href="#"></a>
                 </nav>
             </header>
-
-            <div class="container mt-5"> 
-                <h3 class="mb-3">Registro Estudiante</h3>
-                <hr>
-                <%
-                    String filtro = (request.getParameter("txtFiltro") == null) ? "" : request.getParameter("txtFiltro");
-                    
-                %>
-                <div class="row">
-                    <form method="GET" class="col-sm-10">
-                        <div class="row mb-3">
-                            <label for="txt1" class="col-form-label col-sm-2">Filtrar por Nombre</label>
-                            <input type="text" class="col-form-control col-sm-9" id="txtFiltro" name="txtFiltro" value="<%= filtro%>" placeholder="Por Nombre, Apellido, Email, Teléfono, Fecha, Curso">
-                            <button type="submit" class="btn btn-light col-sm-1"><i class="bi bi-search"></i></button>                    
-                        </div>
-                    </form>
-                    <a href="08crearEstudiante.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo Estudiante</button></a>
-                </div>
-                <form>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
-                                <th scope="col">E-mail</th>
-                                <th scope="col">Teléfono</th>
-                                <th scope="col">Nombre del Curso</th>
-                                <th scope="col">Fecha de Inicio</th>
-                                <th scope="col">Modificar</th>
-                            </tr>
-                        </thead>
-                        <%
-                            LogicaEstudiante logicaEstudiante = new LogicaEstudiante();
-                            boolean hayDatos;
-                            if (filtro.equals("")) {
-                                hayDatos = logicaEstudiante.cargarTodosLosEstudiantes();
-                            } else {
-                                hayDatos = logicaEstudiante.cargarEstudiantePorFiltro(filtro);
-                            }
-                        %>
-                        <tbody>
-                            <% if (hayDatos) { %>
-                            <%  for (Estudiante e : logicaEstudiante.getLista()) {%>
-                            <tr>
-                                <td scope="row"><%= e.getId()%></td>
-                                <td><%= e.getNombre()%></td>
-                                <td><%= e.getApellido()%></td>
-                                <td><%= e.getEmail()%></td>
-                                <td><%= e.getTelefono()%></td>
-                                <td><%= logicaEstudiante.getCursos(e.getIdcurso())%></td>
-                                <td><%= e.getFechaInicio()%></td>
-                                <td>
-                                    <a href="08crearEstudiante.jsp?accion=editar&id=<%= e.getId()%>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
-                                </td>
-                            </tr>
-                            <% } %>
-                            <% } else { %>
-                            <tr>
-                                <td colspan=5>No hay datos</td>
-                            </tr>
-                            <% }%>
-                        </tbody>
+            <%
+            String accion = request.getParameter("accion");
+            int id;
+            id = Integer.parseInt(request.getParameter("id"));
+            Estudiante e = new Estudiante(id);
+            EstudianteDAO dao = new EstudianteDAO();
+            int borrar = dao.borrarEstudiante(e);                         
+            %>
+                                <body>
+                                    <div class="px-4 py-5 my-5 text-left">                                        
+                                        <h1 class="display-5 fw-bold">Estudiante Borrado Exitosamente</h1>
+                                        <div class="col-lg-6 mx-left">
+                                          <p class="lead mb-4">Play Class es un lugar lúdico, magico y lleno de espectaculares lugares 
+                                              para que siempre te sientas en el mejor lugar para aprender y enseñar. </p>
+                                          <div class="d-grid gap-2 d-sm-flex justify-content-sm-left">
+                                              <a href="06registrarEstudiante.jsp"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Registro Estudiantes</button></a>                                           
+                                          </div>
+                                        </div>
+                                      </div>
+            
+                                </tbody>
                     </table>
                 </form>
             </div>

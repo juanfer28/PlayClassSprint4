@@ -17,6 +17,10 @@ public class Estudiante {
 
     public Estudiante() {
     }
+    
+    public Estudiante(int id) {
+        this.id = id;
+    }
 
     
     public Estudiante(String nombre, String apellido, String email, int telefono, String fechaInicio, int idcurso ) {
